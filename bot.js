@@ -43,4 +43,4 @@ client.on('message', (message) => {
         if (message.content === '::start') {stop.splice(stop.indexOf(message.guild.id),1); return message.channel.send('Готово');}
     }
 })
-client.login("NjU5MzgxMzQwNDk1NTQ0MzMx.XgNfwg.LNsLJhb5QAZPUWGy_ZfFclk-riA");
+client.login("token");
