@@ -15,8 +15,7 @@ async function color () {
     }, 1500).then(color);
 }
 client.on('ready', () => {
-    //client.clientStats(client.user.id, { servers: client.guilds.size, shards: 1 })
-    //.then(console.log);
+
     console.log(`[BOOT]Запустился бот ${client.user.username}`);
     client.generateInvite(["ADMINISTRATOR"]).then(link => {
         console.log(link);
@@ -26,7 +25,6 @@ client.on('ready', () => {
     setInterval(function () {
         client.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "LISTENING", url: "https://www.twitch.tv/MrLivixx"} });
         client.user.setPresence({ activity: { name: acitvestatus }, status: 'idle' });
-        //dbl.postStats(client.guilds.size);
     }, 15 * 1000);
     client.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "WATCHING", url: "https://www.twitch.tv/MrLivixx" } });
     client.user.setPresence({ activity: { name: acitvestatus }, status: 'idle' });
