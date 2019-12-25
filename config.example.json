@@ -1,8 +1,0 @@
-﻿{
-    "token": "",
-    "servers": [""],
-    "roleName": "rainbow", 
-    "colors": 60,
-    "speed": 10,
-    "logging": true 
-}
