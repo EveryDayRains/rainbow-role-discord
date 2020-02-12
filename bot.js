@@ -23,26 +23,26 @@ bot.on('ready', () => {
     bot.generateInvite(["ADMINISTRATOR"]).then(link => {
         console.log(link);
     });
-    let statuses = [`Всех с наступающим новым годом!`, `https://cutt.ly/rainbowrolebot`, `Bot by MrLivixx`];
+    let statuses = [`на хозяина!`, `за разроботка`, `Bot by DENI`, `::start`, `::stop`];
     let acitvestatus = statuses[Math.floor(Math.random() * statuses.length)]
     setInterval(function () {
-        bot.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "LISTENING", url: "https://www.twitch.tv/MrLivixx"} });
+        bot.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "LISTENING", url: "https://www.twitch.tv/deni2121"} });
         bot.user.setPresence({ activity: { name: acitvestatus }, status: 'idle' });
         
     }, 15 * 1000);
-    bot.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "WATCHING", url: "https://www.twitch.tv/MrLivixx" } });
+    bot.user.setPresence({ game: { name: acitvestatus, status: 'idle', type: "WATCHING", url: "https://www.twitch.tv/deni2121" } });
     bot.user.setPresence({ activity: { name: acitvestatus }, status: 'idle' });
     color();
 });
 bot.on('guildCreate', (guild) => {
     let channels = guild.channels.filter(channel => channel.type === 'text' && channel.permissionsFor(guild.members.get(bot.user.id)).has('SEND_MESSAGES'));
-    if (channels.size > 0) channels.first().send('Вы пригласили бота **Rainbowbot**.\nДля его корректного функционирования у вас на сервере должна быть роль `Радуга`, роль бота должна иметь право `управление ролями`, и быть выше роли `Радуга`.\nДля управления ботом есть команды:\n`::stop` - останавливает изменение цвета радужной роли\n`::start` - восстанавливает изменение цвета радужной роли\n**Обе команды требуют право `Администратор` или `Управление сервером`!**\n\nЕсли у вас возникли какие-то трудности - обратитесь к <@502948927809781763> (`Livixxshtern#6666`)');
+    if (channels.size > 0) channels.first().send('Вы пригласили бота **Радужный бот**.\nДля его корректного функционирования у вас на сервере должна быть роль `Радуга`, роль бота должна иметь право `управление ролями`, и быть выше роли `Радуга`.\nДля управления ботом есть команды:\n`::stop` - останавливает изменение цвета радужной роли\n`::start` - восстанавливает изменение цвета радужной роли\n**Обе команды требуют право `Администратор` или `Управление сервером`!**\n\nЕсли у вас возникли какие-то трудности - обратитесь к <@502948927809781763> (`DENI#0001`)');
 });
 bot.on('message', (message) => {
     if (message.channel.type !== 'text') return;
     if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') || message.member.id === message.guild.owner.id) {
-        if (message.content === '::stop') {stop.push(message.guild.id); return message.channel.send('Готово');}
+        if (message.content === '::stop') {stop.push(message.guild.id); return message.channel.send('все было запущино');}
         if (message.content === '::start') {stop.splice(stop.indexOf(message.guild.id),1); return message.channel.send('Готово');}
     }
 })
-bot.login("ВАШ ТОКЕН");
+bot.login("NjcwNzA5OTg2MDIzNzAyNTI5.XkQyog.SYU6xSc7owKXvm4Ql2nTGcoK7OA");
